@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Carbon\Factory;
 
@@ -23,3 +24,4 @@ Route::get("/hello", function () {
     return view("hello", ["name" => $name]);
 });
 
+Route::get("/users", [UserController::class, 'index'])->name('users.index');
